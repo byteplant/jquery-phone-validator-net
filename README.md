@@ -10,7 +10,7 @@ A small library providing a wrapper for [api.phone-validator.net](http://www.pho
 See test.js and test.html
   ```js
   // Init only once
-  $.validatePhone(APIKEY);
+  $.validatePhone(APIKEY, countryCode(iso2), mode, locale);
 
   // OnClick
   $("#submit").click(function () {
@@ -20,12 +20,14 @@ See test.js and test.html
   })
   
   //response looks like that: 
-    { 
-      status: 200,                      // ==> http://www.email-validator.net/email-verification-results.html
-      info: "OK - Valid Address",       // ==> http://www.email-validator.net/email-verification-results.html
-      details: "Looong description",    // ==> http://www.email-validator.net/email-verification-results.html
-      easyStatus: "VALID"               // VALID, SUSPECT or INVALID (to keep it simple)
-    }
+    /*
+      status	VALID_CONFIRMED, VALID_UNCONFIRMED, INVALID or error: DELAYED, RATE_LIMIT_EXCEEDED, API_KEY_INVALID_OR_DEPLETED
+      linetype	FIXED_LINE, MOBILE, VOIP, TOLL_FREE, PREMIUM_RATE, SHARED_COST, PERSONAL_NUMBER, PAGER, UAN, VOICEMAIL
+      location	geographical location (city, county, state)
+      countrycode	two letter ISO 3166-1 country code
+      formatnational	phone number in national format
+      formatinternational	phone number in international format
+    */
     
   });
   ```
