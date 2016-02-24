@@ -1,1 +1,1 @@
-jquery-phone-validator-net
+jquery-email-validator-net
