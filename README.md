@@ -8,18 +8,19 @@ A small library providing a wrapper for [api.phone-validator.net](http://www.pho
   This Plugin needs jQuery!
 ## Usage
 See test.js and test.html
+**[o] is optimal!**
   ```js
   // Init only once
-  $.validatePhone(APIKEY, countryCode(iso2), mode, locale);
+  $.validatePhone(APIKEY, [o]countryCodeIso2, [o]mode, [o]locale);
 
   // OnClick
   $("#submit").click(function () {
     $("#phone").validatePhone(function (response) {
       console.log(response);
-    })
+    }, [o]countryCodeIso2)
   })
-  
-  //response looks like that: 
+
+  //response looks like that:
     /*
       status	VALID_CONFIRMED, VALID_UNCONFIRMED, INVALID or error: DELAYED, RATE_LIMIT_EXCEEDED, API_KEY_INVALID_OR_DEPLETED
       linetype	FIXED_LINE, MOBILE, VOIP, TOLL_FREE, PREMIUM_RATE, SHARED_COST, PERSONAL_NUMBER, PAGER, UAN, VOICEMAIL
@@ -28,7 +29,7 @@ See test.js and test.html
       formatnational	phone number in national format
       formatinternational	phone number in international format
     */
-    
+
   });
   ```
 
