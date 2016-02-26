@@ -8,16 +8,15 @@ A small library providing a wrapper for [api.phone-validator.net](http://www.pho
   This Plugin needs jQuery!
 ## Usage
 See test.js and test.html
-**[o] is optimal!**
   ```js
   // Init only once
-  $.validatePhone(APIKEY, [o]countryCodeIso2, [o]mode, [o]locale);
+  $.validatePhone(APIKEY, countryCodeIso2, mode, locale);
 
   // OnClick
   $("#submit").click(function () {
     $("#phone").validatePhone(function (response) {
       console.log(response);
-    }, [o]countryCodeIso2)
+    }, countryCodeIso2)
   })
 
   //response looks like that:
