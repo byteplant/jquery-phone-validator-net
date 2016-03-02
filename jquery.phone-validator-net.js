@@ -6,8 +6,10 @@
     var countryCode = countryCode||"de"
     var mode = mode||"extensive"
     var locale = locale||"en-US"
-    $.fn.validatePhone = function(cb, country) {
+    $.fn.validatePhone = function(cb, country, mode2, locale2) {
       countryCode = country||countryCode
+      var mode = mode2||mode
+      var locale = locale2||locale
       var phone = this.val();
       $.get(baseUrl + "?PhoneNumber=" + phone + "&CountryCode=" + countryCode + "&Mode=" + mode + "&APIKey=" + apiKey,
         $.proxy(function (res) {

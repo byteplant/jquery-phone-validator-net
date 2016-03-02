@@ -10,13 +10,13 @@ A small library providing a wrapper for [api.phone-validator.net](http://www.pho
 See test.js and test.html
   ```js
   // Init only once
-  $.validatePhone(APIKEY, countryCodeIso2, mode, locale);
+  $.validatePhone(APIKEY);
 
   // OnClick
   $("#submit").click(function () {
     $("#phone").validatePhone(function (response) {
       console.log(response);
-    }, countryCodeIso2)
+    }, countryCodeIso2, mode, locale)
   })
 
   //response looks like that:
